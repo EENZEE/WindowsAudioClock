@@ -1,0 +1,17 @@
+c:\backedupfolder\documents\visual studio 2010\Projects\AudioClockApplication\AudioClockApplication\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\backedupfolder\documents\visual studio 2010\Projects\AudioClockApplication\AudioClockApplication\obj\x86\Debug\WindowsFormsApplication1.AudioClockForm.resources
+c:\backedupfolder\documents\visual studio 2010\Projects\AudioClockApplication\AudioClockApplication\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+c:\backedupfolder\documents\visual studio 2010\Projects\AudioClockApplication\AudioClockApplication\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\backedupfolder\documents\visual studio 2010\Projects\AudioClockApplication\AudioClockApplication\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\backedupfolder\documents\visual studio 2010\Projects\AudioClockApplication\AudioClockApplication\bin\Debug\AudioClockApplication.exe
+c:\backedupfolder\documents\visual studio 2010\Projects\AudioClockApplication\AudioClockApplication\bin\Debug\AudioClockApplication.pdb
+c:\backedupfolder\documents\visual studio 2010\Projects\AudioClockApplication\AudioClockApplication\obj\x86\Debug\AudioClockApplication.exe
+c:\backedupfolder\documents\visual studio 2010\Projects\AudioClockApplication\AudioClockApplication\obj\x86\Debug\AudioClockApplication.pdb
+C:\Users\Albert\Desktop\AudioClockApplication\AudioClockApplication\obj\x86\Debug\AudioClockApplication.exe
+C:\Users\Albert\Desktop\AudioClockApplication\AudioClockApplication\obj\x86\Debug\AudioClockApplication.pdb
+C:\Users\Albert\Desktop\AudioClockApplication\AudioClockApplication\bin\Debug\AudioClockApplication.exe
+C:\Users\Albert\Desktop\AudioClockApplication\AudioClockApplication\bin\Debug\AudioClockApplication.pdb
+C:\Users\Albert\Desktop\AudioClockApplication\AudioClockApplication\obj\x86\Debug\AudioClockApplication.csprojResolveAssemblyReference.cache
+C:\Users\Albert\Desktop\AudioClockApplication\AudioClockApplication\obj\x86\Debug\WindowsFormsApplication1.AudioClockForm.resources
+C:\Users\Albert\Desktop\AudioClockApplication\AudioClockApplication\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Albert\Desktop\AudioClockApplication\AudioClockApplication\obj\x86\Debug\AudioClockApplication.csproj.GenerateResource.Cache
