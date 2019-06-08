@@ -34,6 +34,7 @@ namespace WindowsFormsApplication1
             int hours = 0;
             int allMinutes = 0;
             int singleMinutes = 0;
+            int decaMinutes = 0;
 
             string nowString = DateTime.Now.ToShortTimeString();
 
@@ -49,64 +50,37 @@ namespace WindowsFormsApplication1
 
                 if (int.TryParse(timeArray[1], out allMinutes))
                 {
-
+                    return;
                 }
 
                 if (int.TryParse(timeArray[0], out hours))
                 {
-                    singleMinutes = allMinutes % 10;
-
-                    if (allMinutes == 0 && hourCheckBox.Checked)
-                    {
-                        saySomething(timeArray[0]);
-                        saySomething("OCLOCK");
-                    }
-                    else if ((quarterHourCheckBox.Checked && 
-                             (allMinutes == 15 || allMinutes == 30 || allMinutes == 45 || allMinutes == 0) 
-                             || (halfHourCheckBox.Checked && (allMinutes == 30)) 
-                             || (hourCheckBox.Checked && allMinutes == 0) 
-                             || allMinutesCheckBox.Checked))  
-                    {
-                        saySomething(timeArray[0]);
-
-                        if (allMinutes == 0)
-                        {
-                            saySomething("00");
-                        }
-                        else if (allMinutes < 30)
-                        {
-                            saySomething("20");
-                        }
-                        else if (allMinutes < 40)
-                        {
-                            saySomething("30");
-                        }
-                        else if (allMinutes < 50)
-                        {
-                            saySomething("40");
-                        }
-                        else
-                        {
-                            saySomething("50");
-                        }
-
-                        if (singleMinutes != 0 && allMinutes < 10)
-                        {
-                            saySomething("0");
-                            saySomething(Convert.ToString(allMinutes));
-                        }
-                        else if (allMinutes != 0 && allMinutes < 20)
-                        {
-                            saySomething(Convert.ToString(allMinutes));
-                        }
-                        else if (singleMinutes!=0)
-                        {
-                            saySomething(Convert.ToString(singleMinutes));
-                        }
-
-                        saySomething(timeArray[2]);
-                    }
+                    return;
                 }
+
+                singleMinutes = allMinutes % 10;
+                decaMinutes = allMinutes - singleMinutes;
+
+                 if (allMinutes == 0 && (hourCheckBox.Checked || quarterHourCheckBox.Checked))
+                 {
+                     saySomething(timeArray[0]);
+                     saySomething("OCLOCK");
+                     saySomething(timeArray[3]);
+                     return;
+                 }
+
+                 if ((quarterHourCheckBox.Checked && 
+                      (allMinutes == 15 || allMinutes == 30 || allMinutes == 45) 
+                      || (halfHourCheckBox.Checked && (allMinutes == 30)) 
+                      || (hourCheckBox.Checked && allMinutes == 0) 
+                      || allMinutesCheckBox.Checked))  
+                 {
+                     saySomething(Convert.ToString(timeArray[0]));
+                     saySomething(Convert.ToString(decaMinutes));
+                     saySomething(Convert.ToString(singleMinutes));
+                    saySomething(timeArray[2]);
+                 }
+                
             }
         }
 
@@ -126,7 +100,6 @@ namespace WindowsFormsApplication1
 
             
         }
-
 
         private void saySomething(string something)
         {
@@ -150,7 +123,6 @@ namespace WindowsFormsApplication1
                 case "1":
                     file = ".\\resources\\ONE.wav"; 
                     break;
-
                 case "2":
                     file = ".\\resources\\TWO.wav"; 
                     break;
@@ -231,18 +203,13 @@ namespace WindowsFormsApplication1
             }
         }
 
-
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            playSound(".\\resources\\ONE.wav");
-            playSound(".\\resources\\TWENTY.wav");
-            playSound(".\\resources\\TWO.wav");
-            saySomething("OCLOCK");
+            DisplayTimeEvent(sender, null);
         }
 
         private void playSound(string path)
         {
-
             player.SoundLocation = path;
             player.Load();
             player.PlaySync();
@@ -251,6 +218,7 @@ namespace WindowsFormsApplication1
 
         private void AudioClockForm_Load(object sender, EventArgs e)
         {
+
 
         }
     }
