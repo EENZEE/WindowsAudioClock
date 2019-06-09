@@ -31,7 +31,6 @@ namespace WindowsFormsApplication1
 
         public void DisplayTimeEvent( object source, ElapsedEventArgs e )
         {
-            int hours = 0;
             int allMinutes = 0;
             int singleMinutes = 0;
             int decaMinutes = 0;
@@ -48,12 +47,7 @@ namespace WindowsFormsApplication1
                 char[] tags = {':', ' '};
                 string[] timeArray = nowString.Split(tags);
 
-                if (int.TryParse(timeArray[1], out allMinutes))
-                {
-                    return;
-                }
-
-                if (int.TryParse(timeArray[0], out hours))
+                if (!int.TryParse(timeArray[1], out allMinutes))
                 {
                     return;
                 }
@@ -83,7 +77,6 @@ namespace WindowsFormsApplication1
                 
             }
         }
-
 
         private void UpdateDisplay(string text)
         {
