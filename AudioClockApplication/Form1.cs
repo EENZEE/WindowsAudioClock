@@ -69,10 +69,18 @@ namespace WindowsFormsApplication1
                       || (hourCheckBox.Checked && allMinutes == 0) 
                       || allMinutesCheckBox.Checked))  
                  {
+                    
                      saySomething(Convert.ToString(timeArray[0]));
-                     saySomething(Convert.ToString(decaMinutes));
-                     saySomething(Convert.ToString(singleMinutes));
-                    saySomething(timeArray[2]);
+                    if (allMinutes > 19)
+                    {
+                        saySomething(Convert.ToString(decaMinutes));
+                        saySomething(Convert.ToString(singleMinutes));
+                        saySomething(timeArray[2]);
+                    }
+                    else
+                    {
+                        saySomething(Convert.ToString(allMinutes));
+                    }
                  }
                 
             }
