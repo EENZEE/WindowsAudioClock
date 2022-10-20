@@ -19,7 +19,10 @@ namespace WindowsFormsApplication1
            new System.Media.SoundPlayer();
         public static System.Timers.Timer myTimer = new System.Timers.Timer();
         private string lastString;
- 
+//        private string soundPath = System.IO.Path.GetDirectoryName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName) + System.IO.Path.DirectorySeparatorChar + "sounds" + System.IO.Path.DirectorySeparatorChar;
+        static string resFolder = System.IO.Path.Combine(System.Windows.Forms.Application.StartupPath, "Resources");
+        static string soundPath = System.IO.Path.Combine(resFolder, "sounds") + System.IO.Path.DirectorySeparatorChar;
+
         public AudioClockForm()
         {
             InitializeComponent();
@@ -37,8 +40,10 @@ namespace WindowsFormsApplication1
 
             string nowString = DateTime.Now.ToShortTimeString();
 
-            // nowString = "9:20 PM";
-            // lastString = "9:19 PM";
+            
+
+            //nowString = "12:00 PM";
+            //lastString = "11:59 AM";
 
             if (nowString != lastString)
             {
@@ -59,7 +64,7 @@ namespace WindowsFormsApplication1
                  {
                      saySomething(timeArray[0]);
                      saySomething("OCLOCK");
-                     saySomething(timeArray[3]);
+//                     saySomething(timeArray[3]);
                      return;
                  }
 
@@ -82,7 +87,6 @@ namespace WindowsFormsApplication1
                         saySomething(Convert.ToString(allMinutes));
                     }
                  }
-                
             }
         }
 
@@ -109,92 +113,92 @@ namespace WindowsFormsApplication1
             switch (something)
             {
                 case "AM":
-                    file = ".\\resources\\AM.wav";
+                    file = soundPath + "AM.wav";
                     break;
                 case "PM":
-                   file = ".\\resources\\PM.wav";
+                   file = soundPath + "PM.wav";
                     break;
                 case "00":
                 case "OCLOCK":
-                   file = ".\\resources\\OCLOCK.wav";
+                   file = soundPath + "OCLOCK.wav";
                     break;
                 case "0":
-                    file = ".\\resources\\OH.wav";  // fix this
+                    file = soundPath + "OH.wav";  // fix this
                     break;
                 case "1":
-                    file = ".\\resources\\ONE.wav"; 
+                    file = soundPath + "ONE.wav"; 
                     break;
                 case "2":
-                    file = ".\\resources\\TWO.wav"; 
+                    file = soundPath + "TWO.wav"; 
                     break;
                 case "3":
-                    file = ".\\resources\\THREE.wav"; 
+                    file = soundPath + "THREE.wav"; 
                     break;
                 case "4":
-                    file = ".\\resources\\FOUR.wav"; 
+                    file = soundPath + "FOUR.wav"; 
                     break;
                 case "5":
-                    file = ".\\resources\\FIVE.wav"; 
+                    file = soundPath + "FIVE.wav"; 
                     break;
                 case "6":
-                    file = ".\\resources\\SIX.wav"; 
+                    file = soundPath + "SIX.wav"; 
                     break;
                 case "7":
-                    file = ".\\resources\\SEVEN.wav"; 
+                    file = soundPath + "SEVEN.wav"; 
                     break;
                 case "8":
-                    file = ".\\resources\\EIGHT.wav"; 
+                    file = soundPath + "EIGHT.wav"; 
                     break;
                 case "9":
-                    file = ".\\resources\\NINE.wav"; 
+                    file = soundPath + "NINE.wav"; 
                     break;
                 case "10":
-                    file = ".\\resources\\TEN.wav"; 
+                    file = soundPath + "TEN.wav"; 
                     break;
                 case "11":
-                    file = ".\\resources\\ELEVEN.wav"; 
+                    file = soundPath + "ELEVEN.wav"; 
                     break;
                 case "12":
-                    file = ".\\resources\\TWELVE.wav"; 
+                    file = soundPath + "TWELVE.wav"; 
                     break;
                 case "13":
-                    file = ".\\resources\\THIRTEEN.wav";
+                    file = soundPath + "THIRTEEN.wav";
                     break;
                 case "14":
-                    file = ".\\resources\\FOURTEEN.wav"; 
+                    file = soundPath + "FOURTEEN.wav"; 
                     break;
                 case "15":
-                    file = ".\\resources\\FIFTEEN.wav"; 
+                    file = soundPath + "FIFTEEN.wav"; 
                     break;
                 case "16":
-                    file = ".\\resources\\SIXTEEN.wav"; 
+                    file = soundPath + "SIXTEEN.wav"; 
                     break;
                 case "17":
-                    file = ".\\resources\\SEVENTEEN.wav"; 
+                    file = soundPath + "SEVENTEEN.wav"; 
                     break;
                 case "18":
-                    file = ".\\resources\\EIGHTEEN.wav"; 
+                    file = soundPath + "EIGHTEEN.wav"; 
                     break;
                 case "19":
-                    file = ".\\resources\\NINETEEN.wav"; 
+                    file = soundPath + "NINETEEN.wav"; 
                     break;
                 case "20":
-                    file = ".\\resources\\TWENTY.wav"; 
+                    file = soundPath + "TWENTY.wav"; 
                     break;
                 case "30":
-                    file = ".\\resources\\THIRTY.wav";
+                    file = soundPath + "THIRTY.wav";
                     break;
                 case "40":
-                    file = ".\\resources\\FOURTY.wav";
+                    file = soundPath + "FOURTY.wav";
                     break;
                 case "50":
-                    file = ".\\resources\\FIFTY.wav";
+                    file = soundPath + "FIFTY.wav";
                     break;
                 case "60":
-                    file = ".\\resources\\SIXTY.wav";
+                    file = soundPath + "SIXTY.wav";
                     break;
                 case "70":
-                    file = ".\\resources\\SEVENTY.wav";
+                    file = soundPath + "SEVENTY.wav";
                     break;
             }
 
